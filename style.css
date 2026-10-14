@@ -1,0 +1,336 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #0d0f12;
+  --card: #14171b;
+  --card-hover: #171b20;
+
+  --border: #282d33;
+
+  --text: #f3f4f6;
+  --muted: #8b949e;
+
+  --accent: #6ea8fe;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  min-height: 100vh;
+
+  background: var(--background);
+  color: var(--text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* PAGE */
+
+.portfolio {
+  width: min(850px, 90%);
+
+  margin: 60px auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+/* CARDS */
+
+.card {
+  background: var(--card);
+
+  border: 1px solid var(--border);
+  border-radius: 12px;
+
+  padding: 30px;
+}
+
+.section-label {
+  color: var(--muted);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+}
+
+.card h2 {
+  margin: 8px 0 24px;
+
+  font-size: 23px;
+}
+
+
+/* PROFILE */
+
+.profile-card {
+  padding: 0;
+
+  overflow: hidden;
+}
+
+.banner {
+  height: 180px;
+
+  background:
+    linear-gradient(
+      120deg,
+      #18263b,
+      #203d62,
+      #17202d
+    );
+}
+
+.profile-content {
+  position: relative;
+
+  padding: 0 30px 30px;
+}
+
+.pfp {
+  width: 105px;
+  height: 105px;
+
+  position: relative;
+
+  margin-top: -52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #20252b;
+
+  border: 5px solid var(--card);
+  border-radius: 50%;
+
+  color: var(--text);
+
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.profile-info {
+  margin-top: 14px;
+}
+
+.profile-info h1 {
+  margin: 0;
+
+  font-size: 30px;
+}
+
+.profile-info p {
+  margin: 5px 0 0;
+
+  color: var(--muted);
+
+  font-size: 15px;
+}
+
+
+/* ABOUT */
+
+.about-text {
+  max-width: 680px;
+
+  margin: 0;
+
+  color: #b5bbc3;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+
+/* EXPERIENCE */
+
+.timeline {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+
+  display: flex;
+
+  gap: 18px;
+
+  padding-bottom: 32px;
+}
+
+.timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: 5px;
+  top: 14px;
+  bottom: -2px;
+
+  width: 1px;
+
+  background: var(--border);
+}
+
+.timeline-item:last-child::before {
+  display: none;
+}
+
+.timeline-dot {
+  width: 11px;
+  height: 11px;
+
+  flex-shrink: 0;
+
+  margin-top: 6px;
+
+  background: var(--accent);
+
+  border-radius: 50%;
+}
+
+.timeline-content {
+  width: 100%;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.timeline-header h3 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.timeline-header span {
+  color: var(--muted);
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.company {
+  margin: 5px 0 10px !important;
+
+  color: var(--accent) !important;
+
+  font-size: 13px !important;
+}
+
+.timeline-content p {
+  max-width: 620px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+/* EDUCATION */
+
+.education {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+.education h3 {
+  margin: 0 0 5px;
+
+  font-size: 16px;
+}
+
+.education p {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 14px;
+}
+
+.education > span {
+  color: var(--muted);
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+  .portfolio {
+    width: 92%;
+
+    margin: 25px auto;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  .banner {
+    height: 135px;
+  }
+
+  .profile-content {
+    padding: 0 22px 24px;
+  }
+
+  .pfp {
+    width: 90px;
+    height: 90px;
+
+    margin-top: -45px;
+
+    font-size: 32px;
+  }
+
+  .timeline-header {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 4px;
+  }
+
+  .education {
+    align-items: flex-start;
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
